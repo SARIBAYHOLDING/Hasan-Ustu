@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>Araştırmalarımız göstermektedir ki, gerçek yaşamla ilişkilendirilen ders tasarımlarında öğrencilerin derse olan bilişsel ve duyuşsal katılımları çok daha yüksek olmaktadır.</p>
                     <hr style="margin: 20px 0; border: 0; border-top: 1px solid var(--border-color);">
                     <p><strong>Kanıt & Orijinal Yayın Kaynağı:</strong></p>
-                    <a href="https://dergipark.org.tr/tr/pub/jrinen/issue/89531/1301419" target="_blank" class="btn btn-primary">DergiPark Makale Bağlantısı</a>
+                    <a href="https://dergipark.org.tr/tr/pub/jrinen/issue/85931/1301419" target="_blank" class="btn btn-primary">DergiPark Makale Bağlantısı</a>
                 `
             },
             'blog-2': {
