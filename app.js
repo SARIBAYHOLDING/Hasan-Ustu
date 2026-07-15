@@ -232,23 +232,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.getElementById('mobile-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileOverlay = document.getElementById('mobile-overlay');
 
-    if (mobileToggle && navMenu) {
-        mobileToggle.addEventListener('click', () => {
-            const expanded = mobileToggle.getAttribute('aria-expanded') === 'true' || false;
-            mobileToggle.setAttribute('aria-expanded', !expanded);
-            navMenu.classList.toggle('active');
-        });
+    function toggleMobileMenu(forceClose = false) {
+        if (!mobileToggle || !navMenu) return;
+        const isActive = navMenu.classList.contains('active');
+        if (isActive || forceClose) {
+            navMenu.classList.remove('active');
+            mobileToggle.setAttribute('aria-expanded', 'false');
+            if (mobileOverlay) mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        } else {
+            navMenu.classList.add('active');
+            mobileToggle.setAttribute('aria-expanded', 'true');
+            if (mobileOverlay) mobileOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', () => toggleMobileMenu());
+    }
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', () => toggleMobileMenu(true));
     }
 
     // Close menu when link is clicked
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                mobileToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
+        link.addEventListener('click', () => toggleMobileMenu(true));
     });
 
     // Header Shadow on Scroll
@@ -652,6 +663,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4000);
     }
     
+    // ==========================================
+    // 11. 3X Premium Scroll Animations & Progress
+    // ==========================================
+    const progressBar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+        if (progressBar) {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            progressBar.style.width = scrolled + '%';
+        }
+    });
+
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -5% 0px'
+    });
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+
     // Global exposure just in case
     window.showToast = showToast;
 });

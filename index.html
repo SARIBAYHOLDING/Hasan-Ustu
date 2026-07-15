@@ -16,9 +16,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="light-theme">
+    <div class="mobile-menu-overlay" id="mobile-overlay"></div>
 
     <!-- Top Navigation Bar -->
     <header class="navbar" id="navbar">
+        <div class="scroll-progress-bar" id="scroll-progress"></div>
         <div class="nav-container">
             <a href="#hero" class="nav-logo" id="nav-logo">
                 <span class="logo-accent">Dr.</span> Hasan Uştu
@@ -126,7 +128,7 @@
                 <div class="section-divider"></div>
             </div>
             
-            <div class="about-grid">
+            <div class="about-grid reveal-on-scroll">
                 <div class="about-text">
                     <p class="lead-text">
                         Eğitimin gücüne inanan ve bilimsel araştırmaları sahadaki uygulamalarla birleştiren bir akademisyen ve eğitim koordinatörüyüm.
@@ -199,7 +201,7 @@
                 <div class="section-divider"></div>
             </div>
             
-            <div class="timeline">
+            <div class="timeline reveal-on-scroll">
                 <!-- Timeline Item 1 -->
                 <div class="timeline-item" id="exp-1">
                     <div class="timeline-dot"></div>
@@ -274,7 +276,7 @@
                 <button class="filter-btn" data-filter="project">Projeler</button>
             </div>
             
-            <div class="portfolio-grid" id="portfolio-grid">
+            <div class="portfolio-grid reveal-on-scroll" id="portfolio-grid">
                 
                 <!-- Portfolio Item 1 (Publication) -->
                 <div class="portfolio-item-card" data-category="publication">
@@ -360,7 +362,7 @@
                 <div class="section-divider bg-white"></div>
             </div>
             
-            <div class="dashboard-container">
+            <div class="dashboard-container reveal-on-scroll">
                 <!-- Dashboard Sidebar Controls -->
                 <div class="dashboard-controls">
                     <h3>Gösterge Paneli Kontrolleri</h3>
@@ -459,7 +461,7 @@
                 <button class="blog-filter-btn" data-blog-filter="education">Eğitim Kuramı</button>
             </div>
             
-            <div class="blog-grid" id="blog-grid">
+            <div class="blog-grid reveal-on-scroll" id="blog-grid">
                 <!-- Blog Item 1 -->
                 <div class="blog-card" data-category="stem">
                     <div class="blog-card-image" style="background-image: url('assets/stem-activity.png');">
@@ -536,7 +538,7 @@
                 <div class="section-divider"></div>
             </div>
             
-            <div class="gallery-grid">
+            <div class="gallery-grid reveal-on-scroll">
                 <div class="gallery-item">
                     <img src="assets/avatar_side.jpg" alt="Dr. Hasan Uştu Faaliyet">
                     <div class="gallery-overlay">
@@ -580,7 +582,7 @@
                 <div class="section-divider"></div>
             </div>
             
-            <div class="contact-grid">
+            <div class="contact-grid reveal-on-scroll">
                 <!-- Contact Information -->
                 <div class="contact-info">
                     <h3>Proje, çalıştay veya akademik ortaklıklar için mesaj gönderebilirsiniz.</h3>
