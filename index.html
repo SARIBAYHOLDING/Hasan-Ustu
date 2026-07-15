@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Hasan Uştu | STEM Uzmanı & Veri Analisti</title>
+    <meta name="description" content="Dr. Hasan Uştu'nun akademik çalışmaları, STEM eğitim projeleri, veri analitiği paneli ve güncel eğitim yazılarının yer aldığı kişisel web sitesi.">
+    <meta name="author" content="Dr. Hasan Uştu">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" id="nav-logo">
+                <span class="logo-accent">Dr.</span> Hasan Uştu
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#about" class="nav-link">Hakkımda</a></li>
+                    <li><a href="#experience" class="nav-link">Deneyim</a></li>
+                    <li><a href="#portfolio" class="nav-link">Akademik & Projeler</a></li>
+                    <li><a href="#dashboard" class="nav-link">Veri Analitiği</a></li>
+                    <li><a href="#blog" class="nav-link">Köşe Yazıları</a></li>
+                    <li><a href="#gallery" class="nav-link">Galeri</a></li>
+                    <li><a href="#contact" class="nav-link">İletişim</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Karanlık/Aydınlık Modu Değiştir" title="Temayı Değiştir">
+                    <!-- Sun Icon -->
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    </svg>
+                    <!-- Moon Icon -->
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                </button>
+                
+                <!-- Mobile Navigation Toggle -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="badge">
+                    <span class="pulse-dot"></span>
+                    MEB Veri Analisti & STEM İl Koordinatörü
+                </div>
+                <h1 class="hero-title">
+                    Eğitimde <span class="text-gradient">STEM ve Veri</span> <br>Analitiğini Buluşturmak
+                </h1>
+                <p class="hero-subtitle">
+                    Sınıf öğretmenliği temelli bütünleşik STEM eylem araştırmaları yürütüyor, eğitim politikalarını veri analizi yöntemleriyle güçlendiriyorum.
+                </p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-primary">Çalışmalarımı İncele</a>
+                    <a href="#contact" class="btn btn-outline">İletişime Geç</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="profile-card-wrapper">
+                    <div class="profile-card-inner">
+                        <div class="profile-avatar-container">
+                            <img src="assets/avatar.jpg" alt="Dr. Hasan Uştu Fotoğrafı" class="profile-avatar" id="hero-avatar">
+                        </div>
+                        <div class="profile-details">
+                            <h3>Dr. Hasan Uştu</h3>
+                            <p id="dynamic-role">STEM Uzmanı & Veri Analisti</p>
+                            <div class="profile-socials">
+                                <a href="https://www.linkedin.com/in/dr-hasan-u%C5%9Ftu-23919361/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                                </a>
+                                <a href="https://scholar.google.com/citations?user=H43wR0MAAAAJ" target="_blank" aria-label="Google Akademik" title="Google Akademik">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
+                                </a>
+                                <a href="https://www.researchgate.net/profile/Hasan-Ustu" target="_blank" aria-label="ResearchGate" title="ResearchGate">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                </a>
+                                <a href="https://orcid.org/0000-0002-1811-8280" target="_blank" aria-label="ORCID" title="ORCID">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><circle cx="9" cy="9" r="4"></circle></svg>
+                                </a>
+                                <a href="https://dergipark.org.tr/tr/pub/ui/search/contributors?q=Hasan+U%C5%9Ftu" target="_blank" aria-label="DergiPark" title="DergiPark">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Kişisel Bilgiler</span>
+                <h2 class="section-title">Dr. Hasan Uştu Kimdir?</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p class="lead-text">
+                        Eğitimin gücüne inanan ve bilimsel araştırmaları sahadaki uygulamalarla birleştiren bir akademisyen ve eğitim koordinatörüyüm.
+                    </p>
+                    <p>
+                        Necmettin Erbakan Üniversitesi'nde <strong>Sınıf Eğitimi</strong> alanında doktora derecemi aldım. Doktora çalışmamda, ilkokul düzeyinde bütünleşik STEM etkinliklerinin sınıf öğretmenleriyle birlikte uygulanmasına yönelik kapsamlı <strong>eylem araştırmaları</strong> gerçekleştirdim.
+                    </p>
+                    <p>
+                        Şu anda Millî Eğitim Bakanlığı (MEB) bünyesinde <strong>Veri Analisti</strong> ve <strong>STEM İl Koordinatörü</strong> olarak görev almaktayım. Öğretmenlerin mesleki gelişimini desteklemek, eylemsel araştırmalar yoluyla okul temelli öğrenme modellerini geliştirmek ve veri odaklı kararlarla eğitim kalitesini artırmak için çalışıyorum.
+                    </p>
+                    <div class="about-facts">
+                        <div class="fact-item">
+                            <span class="fact-num">15+</span>
+                            <span class="fact-lbl">Yıllık MEB Deneyimi</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-num">1.4K+</span>
+                            <span class="fact-lbl">Eğitilen Öğretmen</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-num">10+</span>
+                            <span class="fact-lbl">Akademik Yayın & Tezler</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-expertise">
+                    <h3 class="expertise-title">Uzmanlık Alanları</h3>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon bg-primary-soft">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3z"></path><path d="M9 3a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3 3 3 0 0 1-3-3V6a3 3 0 0 1 3-3z"></path></svg>
+                        </div>
+                        <div class="expertise-info">
+                            <h4>Bütünleşik STEM Pedagojisi</h4>
+                            <p>Fen, teknoloji, mühendislik ve matematik disiplinlerinin ilkokul düzeyinde entegrasyonu, pratik uygulamalar ve müfredat tasarımları.</p>
+                        </div>
+                    </div>
+
+                    <div class="expertise-card">
+                        <div class="expertise-icon bg-secondary-soft">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"></path></svg>
+                        </div>
+                        <div class="expertise-info">
+                            <h4>Eğitim Analitiği ve Veri Analizi</h4>
+                            <p>Öğrenme analitiği, öğretmen mesleki bağlılık analizleri, veri görselleştirme ve MEB süreçlerinde veri tabanlı eylem planlama.</p>
+                        </div>
+                    </div>
+
+                    <div class="expertise-card">
+                        <div class="expertise-icon bg-accent-soft">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <div class="expertise-info">
+                            <h4>Eylem Araştırması ve Çalıştaylar</h4>
+                            <p>Katılımcı eylem araştırmaları ile öğretmenlerin sınıflarındaki sorunlara bilimsel çözümler üretmesi ve mesleki gelişim modelleri.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Kariyer Yolculuğu</span>
+                <h2 class="section-title">Eğitim ve Deneyim</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item" id="exp-1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Eylül 2024 - Devam Ediyor</div>
+                    <div class="timeline-content">
+                        <h3>Veri Analisti</h3>
+                        <h4>Mersin İl Millî Eğitim Müdürlüğü</h4>
+                        <p>Müdürlük bünyesindeki eğitime dair verilerin (akademik başarı, öğretmen eğitimleri, proje katılımları) toplanması, analiz edilmesi ve raporlanması süreçlerini yönetiyorum. Karar alıcılara analitik destek sağlıyorum.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item" id="exp-2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Nisan 2011 - Devam Ediyor</div>
+                    <div class="timeline-content">
+                        <h3>Dr. Öğretmen & STEM İl Koordinatörü</h3>
+                        <h4>Millî Eğitim Bakanlığı</h4>
+                        <p>Osmaniye ve Mersin'de STEM eğitim uygulamalarının koordinasyonunu, çalıştayların organizasyonunu ve öğretmen eğitimlerini yürütmekteyim. Okulların "STEM Okul Etiketi" (STEM School Label) alması için mentorluk yapıyorum.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item" id="exp-3">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Şubat 2015 - Eylül 2019</div>
+                    <div class="timeline-content">
+                        <h3>Doktora Derecesi (PhD)</h3>
+                        <h4>Necmettin Erbakan Üniversitesi</h4>
+                        <p>Temel Eğitim Bölümü Sınıf Eğitimi Anabilim Dalı. <br><strong>Doktora Tez Konusu:</strong> "İlkokul düzeyinde bütünleşik STEM/STEAM etkinliklerinin uygulanması: Sınıf öğretmenleriyle bir eylem araştırması."</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline-item" id="exp-4">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Şubat 2011 - Ekim 2013</div>
+                    <div class="timeline-content">
+                        <h3>Yüksek Lisans Derecesi (MSc)</h3>
+                        <h4>Çukurova Üniversitesi</h4>
+                        <p>Sınıf Öğretmenliği Anabilim Dalı. İlkokul öğretmenlerinin tükenmişlik düzeyleri ile mesleki ve örgütsel bağlılıkları üzerine ampirik araştırmalar ve veri analizleri.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="timeline-item" id="exp-5">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Ekim 2005 - Devam Ediyor</div>
+                    <div class="timeline-content">
+                        <h3>Kamu Personeli / Sınıf Öğretmeni</h3>
+                        <h4>Çukurova Üniversitesi & MEB</h4>
+                        <p>Adana ve çeşitli illerde ilkokul kademesinde sınıf öğretmenliği, okul yönetimi destek süreçleri ve projelerin koordinasyonu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Bilimsel Çalışmalar</span>
+                <h2 class="section-title">Akademik Yayınlar & Projeler</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <!-- Filters -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tümü</button>
+                <button class="filter-btn" data-filter="publication">Yayınlar</button>
+                <button class="filter-btn" data-filter="project">Projeler</button>
+            </div>
+            
+            <div class="portfolio-grid" id="portfolio-grid">
+                
+                <!-- Portfolio Item 1 (Publication) -->
+                <div class="portfolio-item-card" data-category="publication">
+                    <div class="portfolio-card-tag font-accent">Makale (Uluslararası)</div>
+                    <div class="portfolio-card-content">
+                        <h3>Integration of art into STEM education at primary schools: An action research study with primary school teachers</h3>
+                        <p class="pub-journal">Systemic Practice and Action Research, 2022</p>
+                        <p class="pub-desc">Sınıf öğretmenlerinin fen, teknoloji, mühendislik ve matematik derslerine sanatsal süreçleri nasıl entegre edebileceklerini eylem araştırmasıyla inceleyen uluslararası yayın.</p>
+                        <button class="btn-text open-pub-modal" data-pub-id="pub-1">Detayları Gör &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 (Publication) -->
+                <div class="portfolio-item-card" data-category="publication">
+                    <div class="portfolio-card-tag font-accent">Doktora Tezi</div>
+                    <div class="portfolio-card-content">
+                        <h3>İlkokul Düzeyinde Bütünleşik STEM/STEAM Etkinliklerinin Uygulanması: Sınıf Öğretmenleriyle Bir Eylem Araştırması</h3>
+                        <p class="pub-journal">Necmettin Erbakan Üniversitesi, 2019</p>
+                        <p class="pub-desc">İlkokul sınıflarında öğretmenlerin STEM etkinliklerini tasarlama ve uygulamadaki pedogojik gelişim süreçlerini adım adım takip eden bilimsel eylem tezi.</p>
+                        <button class="btn-text open-pub-modal" data-pub-id="pub-2">Detayları Gör &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 (Project) -->
+                <div class="portfolio-item-card" data-category="project">
+                    <div class="portfolio-card-tag font-secondary">Erasmus+ Projesi</div>
+                    <div class="portfolio-card-content">
+                        <h3>Erasmus+ "STEM in Action"</h3>
+                        <p class="pub-journal">Araştırmacı ve Eğitmen</p>
+                        <p class="pub-desc">Okullarda yenilikçi STEM metodolojilerinin uygulanması ve öğretmenlerin STEM becerilerinin uluslararası düzeyde geliştirilmesini hedefleyen AB projesi.</p>
+                        <button class="btn-text open-pub-modal" data-pub-id="proj-1">Detayları Gör &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 (Publication) -->
+                <div class="portfolio-item-card" data-category="publication">
+                    <div class="portfolio-card-tag font-accent">Makale (Ulusal)</div>
+                    <div class="portfolio-card-content">
+                        <h3>Tükenmişliğin Mesleğe Bağlılıkla İlişkisi: Sınıf Öğretmenleri Üzerine Bir Araştırma</h3>
+                        <p class="pub-journal">Mersin Üniversitesi Eğitim Fakültesi Dergisi, 2016</p>
+                        <p class="pub-desc">İlkokul öğretmenlerinin mesleki tükenmişlik durumlarının, sınıf içindeki mesleğe ve okula bağlılık düzeyleriyle olan ilişkisini inceleyen nicel araştırma.</p>
+                        <button class="btn-text open-pub-modal" data-pub-id="pub-3">Detayları Gör &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 (Project) -->
+                <div class="portfolio-item-card" data-category="project">
+                    <div class="portfolio-card-tag font-secondary">Eğitim Organizasyonu</div>
+                    <div class="portfolio-card-content">
+                        <h3>Mersin STEM Çalıştayları ve Eğitimleri</h3>
+                        <p class="pub-journal">Çalıştay Koordinatörü & Mentor</p>
+                        <p class="pub-desc">Mersin genelinde yüzlerce sınıf öğretmeninin katıldığı, disiplinlerarası STEM etkinlik planı geliştirme ve eylem araştırması yapma odaklı çalıştayların yönetimi.</p>
+                        <button class="btn-text open-pub-modal" data-pub-id="proj-2">Detayları Gör &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 (Publication) -->
+                <div class="portfolio-item-card" data-category="publication">
+                    <div class="portfolio-card-tag font-accent">Makale (Uluslararası)</div>
+                    <div class="portfolio-card-content">
+                        <h3>Sınıf Öğretmenlerinin Mesleki Bağlılık, İşten Ayrılma Niyeti ve Örgütsel Bağlılık İlişkisi</h3>
+                        <p class="pub-journal">İlköğretim Online, 2017</p>
+                        <p class="pub-desc">Sosyo-demografik faktörlerin ve mesleki tatminin, sınıf öğretmenlerinin okul bünyesindeki örgütsel bağlılığı ve işe devamlılığı üzerindeki yordayıcı etkisinin analizi.</p>
+                        <button class="btn-text open-pub-modal" data-pub-id="pub-4">Detayları Gör &rarr;</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Data Dashboard Section -->
+    <section class="dashboard-section" id="dashboard">
+        <div class="dashboard-shapes">
+            <div class="dshape dshape-1"></div>
+            <div class="dshape dshape-2"></div>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag text-white">Analitik Gösterge Paneli</span>
+                <h2 class="section-title text-white">Eğitim ve STEM İstatistikleri</h2>
+                <p class="section-subtitle text-white-mute">Mersin geneli yürüttüğümüz öğretmen eğitimleri ve STEM okul faaliyetlerinin dinamik verileri.</p>
+                <div class="section-divider bg-white"></div>
+            </div>
+            
+            <div class="dashboard-container">
+                <!-- Dashboard Sidebar Controls -->
+                <div class="dashboard-controls">
+                    <h3>Gösterge Paneli Kontrolleri</h3>
+                    <p>İncelemek istediğiniz analiz parametresini seçiniz. Veriler anlık olarak grafikte güncellenecektir.</p>
+                    
+                    <div class="control-group">
+                        <label for="data-metric">Analiz Metriği</label>
+                        <select id="data-metric" class="dashboard-select">
+                            <option value="teachers">Eğitilen Öğretmen Sayısı (Kümülatif)</option>
+                            <option value="stem-schools">Aktif STEM Okul Etiketi Alan Okullar</option>
+                            <option value="projects">Geliştirilen STEM Eylem Projeleri</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Yıl Bazında Filtrele</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="dash-year" value="all" checked> Tümü (Trend)
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="dash-year" value="2024"> 2024
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="dash-year" value="2025"> 2025
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="dash-year" value="2026"> 2026
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-mini-summary">
+                        <div class="mini-card">
+                            <span class="mini-title">Bölge</span>
+                            <span class="mini-val">Mersin İl MEB</span>
+                        </div>
+                        <div class="mini-card">
+                            <span class="mini-title">Son Güncelleme</span>
+                            <span class="mini-val">Temmuz 2026</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dashboard Graphic Canvas Area -->
+                <div class="dashboard-visualizer">
+                    <div class="visualizer-header">
+                        <h4 id="chart-title">Yıllara Göre Eğitilen Öğretmen Sayısı</h4>
+                        <span class="data-badge" id="chart-badge">Sayısal Veri</span>
+                    </div>
+                    
+                    <!-- Graph Container -->
+                    <div class="chart-wrapper">
+                        <!-- Custom CSS/SVG Interactive Chart -->
+                        <div class="custom-chart-container" id="custom-chart">
+                            <!-- Visual output will be dynamically generated by JS -->
+                            <div class="chart-y-axis">
+                                <span>1500</span>
+                                <span>1000</span>
+                                <span>500</span>
+                                <span>0</span>
+                            </div>
+                            <div class="chart-bars-area" id="chart-bars">
+                                <!-- Bars created via JavaScript -->
+                            </div>
+                        </div>
+                        <div class="chart-x-axis" id="chart-x-labels">
+                            <!-- Labels created via JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="chart-insight-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="insight-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                        <p id="chart-insight">
+                            Eğitim çalışmalarımız 2024 yılından itibaren Mersin genelinde ivme kazanarak kümülatif olarak 1,450 öğretmene ulaşmıştır. STEM odaklı eylem araştırmaları sınıflarda yaygınlaşmaktadır.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Köşe Yazıları</span>
+                <h2 class="section-title">Hasan Hoca'nın Kaleminden</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="blog-filters">
+                <button class="blog-filter-btn active" data-blog-filter="all">Tüm Konular</button>
+                <button class="blog-filter-btn" data-blog-filter="stem">STEM Eğitimi</button>
+                <button class="blog-filter-btn" data-blog-filter="data">Veri Analitiği</button>
+                <button class="blog-filter-btn" data-blog-filter="education">Eğitim Kuramı</button>
+            </div>
+            
+            <div class="blog-grid" id="blog-grid">
+                <!-- Blog Item 1 -->
+                <div class="blog-card" data-category="stem">
+                    <div class="blog-card-image" style="background-image: url('assets/stem-activity.png');">
+                        <span class="blog-tag bg-primary">STEM Eğitimi</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">10 Haziran 2026</span>
+                            <span class="blog-read-time">5 dk okuma</span>
+                        </div>
+                        <h3>Eğitimde Otantik Öğrenme ve STEM Pedagojisi</h3>
+                        <p class="blog-excerpt">Fen bilimleri eğitiminde öğrenmeyi okul sınırlarının dışına taşıyan ve öğrencileri gerçek dünya sorunlarıyla buluşturan otantik öğrenme modellerinin eylem planlaması.</p>
+                        <button class="btn btn-link read-blog-btn" data-blog-id="blog-1">Devamını Oku &rarr;</button>
+                    </div>
+                </div>
+                
+                <!-- Blog Item 2 -->
+                <div class="blog-card" data-category="data">
+                    <div class="blog-card-image" style="background-image: url('assets/data-analytics.png');">
+                        <span class="blog-tag bg-secondary">Veri Analitiği</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">03 Mayıs 2026</span>
+                            <span class="blog-read-time">6 dk okuma</span>
+                        </div>
+                        <h3>Veriyle Eğitim Planlama: Mesleki Bağlılık Analizleri</h3>
+                        <p class="blog-excerpt">Sınıf öğretmenlerinin mesleki bağlılık, işten ayrılma niyetleri ve sosyo-demografik özelliklerinin örgütsel bağlılığa etkisini istatistiksel yordama modelleriyle inceliyoruz.</p>
+                        <button class="btn btn-link read-blog-btn" data-blog-id="blog-2">Devamını Oku &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Blog Item 3 -->
+                <div class="blog-card" data-category="education">
+                    <div class="blog-card-image" style="background-image: url('assets/teacher-dev.png');">
+                        <span class="blog-tag bg-accent">Eğitim Kuramı</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">20 Nisan 2026</span>
+                            <span class="blog-read-time">5 dk okuma</span>
+                        </div>
+                        <h3>Öğretmenlikte Tükenmişlik ve Mesleki Adanmışlık Dengesi</h3>
+                        <p class="blog-excerpt">Sınıf öğretmenleri üzerinde yürüttüğümüz geniş ölçekli nicel çalışma. Duygusal tükenmişlik ile mesleki adanmışlık arasındaki istatistiksel korelasyonlar.</p>
+                        <button class="btn btn-link read-blog-btn" data-blog-id="blog-3">Devamını Oku &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Blog Item 4 -->
+                <div class="blog-card" data-category="education">
+                    <div class="blog-card-image" style="background-image: url('assets/stem-workshop.png');">
+                        <span class="blog-tag bg-accent">Uzaktan Eğitim</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="blog-meta">
+                            <span class="blog-date">15 Mart 2026</span>
+                            <span class="blog-read-time">7 dk okuma</span>
+                        </div>
+                        <h3>Pandemi Dönemi Uzaktan Eğitim Süreci ve Sahadan Yansımalar</h3>
+                        <p class="blog-excerpt">Sınıf öğretmenlerinin pandemi dönemindeki uzaktan eğitim süreçlerine yönelik görüşleri, karşılaşılan pedagojik ve teknolojik engellere dair nitel analiz bulguları.</p>
+                        <button class="btn btn-link read-blog-btn" data-blog-id="blog-4">Devamını Oku &rarr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Saha Fotoğrafları</span>
+                <h2 class="section-title">STEM Çalıştayları ve Etkinlikler</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/avatar_side.jpg" alt="Dr. Hasan Uştu Faaliyet">
+                    <div class="gallery-overlay">
+                        <span>Dr. Hasan Uştu - Mersin İl MEB Çalışma Odası</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/stem-activity.png" alt="İlkokul STEM Etkinliği">
+                    <div class="gallery-overlay">
+                        <span>İlkokul Bütünleşik STEM Etkinlik Uygulaması</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/stem-workshop.png" alt="Öğretmen Eğitim Çalıştayı">
+                    <div class="gallery-overlay">
+                        <span>Mersin Sınıf Öğretmenleri STEM Çalıştayı</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/data-analytics.png" alt="Veri Analitiği Sunumu">
+                    <div class="gallery-overlay">
+                        <span>Eğitim Veri Analizi ve İstatistiksel Raporlama Sunumu</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/stem-classroom.png" alt="STEM Okul Etiketi Sınıfı">
+                    <div class="gallery-overlay">
+                        <span>STEM Okul Etiketi (STEM School Label) Okul Ziyareti</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">İrtibat</span>
+                <h2 class="section-title">İletişime Geçin</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Proje, çalıştay veya akademik ortaklıklar için mesaj gönderebilirsiniz.</h3>
+                    <p>Sorularınız, iş birliği teklifleriniz ya da STEM Okul Etiketi danışmanlık talepleriniz için aşağıdaki iletişim kanallarından veya form üzerinden bana ulaşabilirsiniz.</p>
+                    
+                    <div class="info-list">
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <div>
+                                <h4>E-posta</h4>
+                                <a href="mailto:hasan.ustu@meb.gov.tr">hasan.ustu@meb.gov.tr</a>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <div>
+                                <h4>Görev Yeri</h4>
+                                <p>Mersin İl Millî Eğitim Müdürlüğü, Yenişehir / Mersin</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-badges-container">
+                        <h4>Akademik & Sosyal Ağlar</h4>
+                        <div class="social-badges">
+                            <a href="https://www.linkedin.com/in/dr-hasan-u%C5%9Ftu-23919361/" target="_blank" class="social-badge linkedin-badge">
+                                LinkedIn
+                            </a>
+                            <a href="https://scholar.google.com/citations?user=H43wR0MAAAAJ" target="_blank" class="social-badge scholar-badge">
+                                Google Scholar
+                            </a>
+                            <a href="https://www.researchgate.net/profile/Hasan-Ustu" target="_blank" class="social-badge research-badge">
+                                ResearchGate
+                            </a>
+                            <a href="https://orcid.org/0000-0002-1811-8280" target="_blank" class="social-badge scholar-badge" style="background-color: rgba(166, 206, 57, 0.1); color: rgb(120, 160, 20);">
+                                ORCID ID
+                            </a>
+                            <a href="https://dergipark.org.tr/tr/pub/ui/search/contributors?q=Hasan+U%C5%9Ftu" target="_blank" class="social-badge research-badge" style="background-color: rgba(0, 102, 204, 0.1); color: rgb(0, 80, 180);">
+                                DergiPark
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Adınız Soyadınız</label>
+                                <input type="text" id="name" required placeholder="Örn: Hasan Yılmaz">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-posta Adresiniz</label>
+                                <input type="email" id="email" required placeholder="Örn: ornek@eposta.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Konu</label>
+                            <input type="text" id="subject" required placeholder="Örn: STEM Okul Etiketi Danışmanlığı">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesajınız</label>
+                            <textarea id="message" rows="5" required placeholder="Mesajınızı buraya yazınız..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                            <span class="btn-text">Gönder</span>
+                            <span class="spinner" id="form-spinner"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>Dr. Hasan Uştu</h3>
+                    <p>Eğitimde Bilim, Teknoloji, Mühendislik ve Matematik (STEM) ve Veri Analitiği.</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#about">Hakkımda</a></li>
+                        <li><a href="#experience">Deneyim</a></li>
+                        <li><a href="#portfolio">Akademik</a></li>
+                        <li><a href="#dashboard">Veri Paneli</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dr. Hasan Uştu. Tüm Hakları Saklıdır.</p>
+                <p class="designer-credit">Tasarım ve Geliştirme: Antigravity IDE</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Academic & Project Details Modal -->
+    <div class="modal" id="pub-modal" aria-hidden="true" role="dialog">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-content-wrapper">
+            <button class="modal-close" id="modal-close-btn" aria-label="Kapat">&times;</button>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Will be dynamically populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- Script File -->
+    <script src="app.js"></script>
+</body>
+</html>
