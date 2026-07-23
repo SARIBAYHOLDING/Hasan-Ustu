@@ -473,18 +473,33 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear existing bars
         chartBars.innerHTML = '';
         
-        // Find max value in dataset to scale heights
-        const maxVal = Math.max(...currentDataset.map(item => item.val));
+        // Find max value in dataset to scale heights & Y-Axis dynamically
+        const rawMax = Math.max(...currentDataset.map(item => item.val));
+        const maxVal = rawMax > 0 ? Math.ceil(rawMax * 1.15) : 10;
         
+        // Dynamically Update Y-Axis Ticks
+        const yAxis = document.querySelector('.chart-y-axis');
+        if (yAxis) {
+            const step1 = Math.round(maxVal * 0.66);
+            const step2 = Math.round(maxVal * 0.33);
+            yAxis.innerHTML = `
+                <span>${maxVal}</span>
+                <span>${step1}</span>
+                <span>${step2}</span>
+                <span>0</span>
+            `;
+        }
+
         // Render Bars
         currentDataset.forEach(item => {
             const barCol = document.createElement('div');
             barCol.className = 'chart-bar-col';
             
-            // Calculate percentage height
-            const pct = maxVal > 0 ? (item.val / maxVal) * 80 : 0; // max 80% to keep label visible
+            // Calculate percentage height relative to dynamic maxVal
+            const pct = maxVal > 0 ? (item.val / maxVal) * 85 : 0; // max 85% to keep value visible
             
             barCol.innerHTML = `
+                <div class="chart-bar-tooltip">${item.label}: ${item.val}</div>
                 <span class="chart-bar-val">${item.val}</span>
                 <div class="chart-bar-fill" style="height: 0%"></div>
             `;
@@ -577,11 +592,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
     if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+    // ==========================================
+    // 8.1 Gallery Lightbox Implementation
+    // ==========================================
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightboxModal = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxOverlay = document.getElementById('lightbox-overlay');
+
+    function openLightbox(src, caption) {
+        if (!lightboxModal || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxCaption.textContent = caption || '';
+        lightboxModal.classList.add('active');
+        lightboxModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        if (!lightboxModal) return;
+        lightboxModal.classList.remove('active');
+        lightboxModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const src = item.dataset.gallerySrc || item.querySelector('img')?.src;
+            const caption = item.dataset.galleryCaption || item.querySelector('.gallery-overlay span')?.textContent;
+            openLightbox(src, caption);
+        });
+    });
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxOverlay) lightboxOverlay.addEventListener('click', closeLightbox);
     
-    // Esc Key closes modal
+    // Esc Key closes all active modals
     window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-            closeModal();
+        if (e.key === 'Escape') {
+            if (modal && modal.classList.contains('active')) {
+                closeModal();
+            }
+            if (lightboxModal && lightboxModal.classList.contains('active')) {
+                closeLightbox();
+            }
         }
     });
 
@@ -593,17 +650,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const spinner = document.getElementById('form-spinner');
 
     if (contactForm && submitBtn && spinner) {
+        // Real-time input error removal
+        const formInputs = contactForm.querySelectorAll('input, textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const parentGroup = input.closest('.form-group');
+                if (parentGroup) {
+                    parentGroup.classList.remove('has-error');
+                    const errorMsg = parentGroup.querySelector('.form-error-msg');
+                    if (errorMsg) errorMsg.remove();
+                }
+            });
+        });
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
             // Basic fields grab
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
+            const nameEl = document.getElementById('name');
+            const emailEl = document.getElementById('email');
+            const subjectEl = document.getElementById('subject');
+            const messageEl = document.getElementById('message');
 
-            if (!name || !email || !subject || !message) {
-                showToast('Lütfen tüm zorunlu alanları doldurunuz.', 'error');
+            const name = nameEl ? nameEl.value.trim() : '';
+            const email = emailEl ? emailEl.value.trim() : '';
+            const subject = subjectEl ? subjectEl.value.trim() : '';
+            const message = messageEl ? messageEl.value.trim() : '';
+
+            let hasError = false;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!name) {
+                showFieldError(nameEl, 'Lütfen adınızı giriniz.');
+                hasError = true;
+            }
+            if (!email || !emailRegex.test(email)) {
+                showFieldError(emailEl, 'Lütfen geçerli bir e-posta adresi giriniz.');
+                hasError = true;
+            }
+            if (!subject) {
+                showFieldError(subjectEl, 'Lütfen konu giriniz.');
+                hasError = true;
+            }
+            if (!message) {
+                showFieldError(messageEl, 'Lütfen mesajınızı giriniz.');
+                hasError = true;
+            }
+
+            if (hasError) {
+                showToast('Lütfen formdaki hatalı/eksik alanları düzeltiniz.', 'error');
                 return;
             }
 
@@ -622,8 +717,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Show notification
                 showToast(`Teşekkürler Sayın ${name}, mesajınız başarıyla iletildi!`, 'success');
-            }, 1800);
+            }, 1500);
         });
+    }
+
+    function showFieldError(inputEl, msg) {
+        if (!inputEl) return;
+        const parentGroup = inputEl.closest('.form-group');
+        if (parentGroup) {
+            parentGroup.classList.add('has-error');
+            let errorMsg = parentGroup.querySelector('.form-error-msg');
+            if (!errorMsg) {
+                errorMsg = document.createElement('span');
+                errorMsg.className = 'form-error-msg';
+                parentGroup.appendChild(errorMsg);
+            }
+            errorMsg.textContent = msg;
+        }
     }
 
     // ==========================================
@@ -692,6 +802,29 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         revealObserver.observe(el);
     });
+
+    // ==========================================
+    // 12. Floating Back To Top Button Handler
+    // ==========================================
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+        if (backToTopBtn) {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }
+    });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Global exposure just in case
     window.showToast = showToast;
