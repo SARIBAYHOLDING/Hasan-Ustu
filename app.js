@@ -314,12 +314,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = btn.dataset.filter;
             
             portfolioCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
+                const matches = filter === 'all' || card.dataset.category === filter;
+                if (matches) {
                     card.style.display = 'flex';
-                    setTimeout(() => card.style.opacity = '1', 50);
+                    requestAnimationFrame(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0) scale(1)';
+                    });
                 } else {
                     card.style.opacity = '0';
-                    card.style.display = 'none';
+                    card.style.transform = 'translateY(10px) scale(0.96)';
+                    setTimeout(() => {
+                        if (card.style.opacity === '0') {
+                            card.style.display = 'none';
+                        }
+                    }, 300);
                 }
             });
         });
@@ -337,12 +346,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const filter = btn.dataset.blogFilter;
             
             blogCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
+                const matches = filter === 'all' || card.dataset.category === filter;
+                if (matches) {
                     card.style.display = 'flex';
-                    setTimeout(() => card.style.opacity = '1', 50);
+                    requestAnimationFrame(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0) scale(1)';
+                    });
                 } else {
                     card.style.opacity = '0';
-                    card.style.display = 'none';
+                    card.style.transform = 'translateY(10px) scale(0.96)';
+                    setTimeout(() => {
+                        if (card.style.opacity === '0') {
+                            card.style.display = 'none';
+                        }
+                    }, 300);
                 }
             });
         });
