@@ -445,6 +445,10 @@ body.dark-theme .shape {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+.btn-primary .btn-text {
+    color: #ffffff;
+}
+
 .btn-outline {
     background-color: transparent;
     color: var(--text-primary);
